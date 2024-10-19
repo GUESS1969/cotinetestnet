@@ -32,7 +32,7 @@ const getPublicKeyHashFromAddress = (address: string): Uint8Array | null => {
 
 const Contribute = () => {
   const networkEnv =
-    process.env.NEXT_PUBLIC_NETWORK_ENV === "Preview"
+    process.env.NEXT_PUBLIC_Pre_NETWORK_ENV === "Preview"
       ? NetworkType.TESTNET
       : NetworkType.MAINNET;
 
