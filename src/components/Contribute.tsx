@@ -56,7 +56,7 @@ const Contribute = () => {
     setErrorMessage(null); // Reset the error message
 
     try {
-      const blockfrostApiKey = process.env.NEXT_PUBLIC_BLOCKFROST_KEY_PREPROD || "";
+      const blockfrostApiKey = process.env.NEXT_PUBLIC_BLOCKFROST_KEY_PREVIEW || "";
       const networkEnv = "Preprod"; // Or "Mainnet" depending on your environment
 
       // Initialize Lucid
