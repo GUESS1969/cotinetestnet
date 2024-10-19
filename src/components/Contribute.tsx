@@ -75,7 +75,7 @@ const Contribute = () => {
       };
 
       const contractAddress = validatorToAddress(
-        networkEnv === "Preprod" ? "Preprod" : "Mainnet",
+        networkEnv === "Preview" ? "Preview" : "Mainnet",
         validator
       );
       console.log("Contract Address:", contractAddress);
