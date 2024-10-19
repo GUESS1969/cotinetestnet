@@ -5,4 +5,4 @@ const config = {
   },
 };
 
-export default config;
+module.exports = config;  // Use CommonJS syntax for Node.js
