@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -6,29 +6,47 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: ['hover', 'focus', 'active'],
+      textColor: ['hover', 'focus'],
+      screens: {
+        xs: "480px", // Extra small screens
+        '2xl': '1440px', // Adjusting the 2xl breakpoint for larger screens
+      },
+      keyframes: {
+        slideDown: {
+          '0%': { transform: 'translateY(-10px)', opacity: 0 },
+          '100%': { transform: 'translateY(0)', opacity: 1 },
+        },
+      },
+      animation: {
+        'slide-down': 'slideDown 0.3s ease-out',
+      },
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {
     themes: [
+      'light', // DaisyUI built-in theme
+      'dark',  // DaisyUI built-in theme
       {
         mytheme: {
-          "color-scheme": "dark",
-          "primary": "#e779c1",
-          "secondary": "#58c7f3",
-          "accent": "#f3cc30",
-          "neutral": "#4F21AA",
-          "neutral-content": "#f9f7fd",
-          "base-100": "#1a103d",
-          "base-content": "#f9f7fd",
-          "info": "#53c0f3",
-          "info-content": "#201047",
-          "success": "#71ead2",
-          "success-content": "#201047",
-          "warning": "#f3cc30",
-          "warning-content": "#201047",
-          "error": "#e24056",
-          "error-content": "#f9f7fd",
+          "color-scheme": "light",
+          "primary": "#1D4ED8",
+          "secondary": "#9333EA",
+          "accent": "#F59E0B",
+          "neutral": "#F3F4F6",
+          "neutral-content": "#1F2937",
+          "base-100": "#FFFFFF",
+          "base-content": "#1F2937",
+          "info": "#3B82F6",
+          "info-content": "#FFFFFF",
+          "success": "#10B981",
+          "success-content": "#FFFFFF",
+          "warning": "#FBBF24",
+          "warning-content": "#1F2937",
+          "error": "#EF4444",
+          "error-content": "#FFFFFF",
         },
       },
     ],
