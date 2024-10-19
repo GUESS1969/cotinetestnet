@@ -17,7 +17,7 @@ type WalletModalProps = {
 
 const WalletModal: React.FC<WalletModalProps> = ({ onClose }) => {
   const network =
-    process.env.NEXT_PUBLIC_NETWORK_ENV === "Preprod"
+    process.env.NEXT_PUBLIC_NETWORK_ENV === "Preview"
       ? NetworkType.TESTNET
       : NetworkType.MAINNET;
 
