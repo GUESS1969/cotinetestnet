@@ -9,10 +9,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWallet } from '@fortawesome/free-solid-svg-icons'; // Example icon for wallet
 
 const WalletConnect = () => {
+  // Ensure the correct network environment (Mainnet)
   const networkEnv =
-    process.env.NEXT_PUBLIC_NETWORK_ENV === "Preview"
-      ? NetworkType.TESTNET
-      : NetworkType.MAINNET;
+    process.env.NEXT_PUBLIC_NETWORK_ENV === "Mainnet"
+      ? NetworkType.MAINNET
+      : NetworkType.TESTNET;
 
   const { isConnected, usedAddresses, disconnect, accountBalance } = useCardano({
     limitNetwork: networkEnv,
