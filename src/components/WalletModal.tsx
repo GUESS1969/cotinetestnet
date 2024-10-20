@@ -22,7 +22,7 @@ const WalletModal: React.FC<WalletModalProps> = ({ onClose }) => {
       : NetworkType.MAINNET;
 
   const { isConnected, connect, disconnect, installedExtensions } = useCardano({
-    limitNetwork: network,
+    limitNetwork: network, // Dynamically switch between Testnet and Mainnet
   });
 
   // Automatically close modal when wallet is connected
@@ -35,9 +35,6 @@ const WalletModal: React.FC<WalletModalProps> = ({ onClose }) => {
 
   return (
     <div>
-      {/* Connect/Disconnect Button */}
-      
-
       {/* Modal for wallet selection */}
       <dialog
         id="my_modal"
