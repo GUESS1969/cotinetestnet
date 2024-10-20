@@ -89,6 +89,7 @@ const Contribute = () => {
       const participants = [
         getPublicKeyHashFromAddress("addr_test1qzqj3u3u407gl4jnaujm6w78awnes4rk5pq6extz67ey0urymfwmlan75sp4fm5e5tnfdhzz7lnvq06qkdj7kec5ntds7azxt0"),
         getPublicKeyHashFromAddress("addr_test1qzxm3w8cr2t0da7r6jh5n0h4c49mur07xkjq3l2wu6xhguu0x7zxuq8e6wnvmx67tmkpr7de0guxez98c2knvpmnwmnq4ws9qt"),
+        getPublicKeyHashFromAddress("addr1qxxm3w8cr2t0da7r6jh5n0h4c49mur07xkjq3l2wu6xhguu0x7zxuq8e6wnvmx67tmkpr7de0guxez98c2knvpmnwmnqkcd9v5"),
       ]
         .filter((participant): participant is Uint8Array => participant !== null)
         .map((participant) => Data.to(Buffer.from(participant).toString("hex")));
