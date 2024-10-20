@@ -10,7 +10,11 @@ import { faWallet } from '@fortawesome/free-solid-svg-icons'; // Example icon fo
 
 const WalletConnect = () => {
   const networkEnv =
+<<<<<<< HEAD
     process.env.NEXT_PUBLIC_Pre_NETWORK_ENV === "Preview"
+=======
+    process.env.NEXT_PUBLIC_NETWORK_ENV === "Preview"
+>>>>>>> f7581e1 (Updated Contribute, WalletConnect, and WalletModal components)
       ? NetworkType.TESTNET
       : NetworkType.MAINNET;
 
