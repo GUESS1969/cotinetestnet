@@ -12,8 +12,8 @@ const nextConfig = {
     return config
   },
     env:{
-    BLOCKFROST_KEY: process.env.NEXT_PUBLIC_BLOCKFROST_KEY_PREPROD,
-    API_URL: process.env.API_URL_PREPROD,
+    BLOCKFROST_KEY: process.env.NEXT_PUBLIC_BLOCKFROST_KEY_MAINNET,
+    API_URL: process.env.API_URL_MAINNET,
     NETWORK: process.env.NEXT_PUBLIC_NETWORK_ENV
   }
 }

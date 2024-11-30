@@ -1,7 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
 const Main= dynamic(() => import("../components/Main"), { ssr: false });
-const Contribute = dynamic(() => import("../components/Contribute"), { ssr: false });
+const CheckRedeem = dynamic(() => import("../components/CheckRedeem"), { ssr: false });
 
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-12 px-4">
         {/* Left Column: Contribute & Governance */}
         <div className="space-y-10">
-          <Contribute/>
+          <CheckRedeem/>
           {/* <WinnerRedeem/> */}
 
 
