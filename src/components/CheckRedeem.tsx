@@ -252,6 +252,7 @@ const handleRedeem = async () => {
     console.log("Building the transaction...");
     const tx = await lucid.newTx()
     .collectFrom(allUTxOs, redeemRedeemer) // Use all UTxO
+    .pay.ToAddressWithData(contractAddress, { kind: "inline", value: datum }, { lovelace: BigInt(2_000_000) })
     .pay.ToAddress(await lucid.wallet().address(), { lovelace: BigInt(26_000_000) })
     .attach.SpendingValidator(validator)
     .addSigner(walletAddress)
