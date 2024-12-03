@@ -29,7 +29,7 @@ const getPublicKeyHash = async (address: string): Promise<Uint8Array | null> => 
 
 const CheckRedeem = () => {
   const networkEnv = process.env.NEXT_PUBLIC_NETWORK_ENV === "Preprod"
-    ? NetworkType.PREPROD 
+    ? NetworkType.MAINNET 
     : NetworkType.TESTNET;
 
   const { isConnected, enabledWallet } = useCardano({
@@ -48,15 +48,13 @@ const CheckRedeem = () => {
       setErrorMessage("Invalid input or wallet not connected.");
       return;
     }
-
     setIsLoading(true);
     setTxHash(null); 
     setErrorMessage(null);
-
     try {
       const blockfrostApiKey =  process.env.NEXT_PUBLIC_BLOCKFROST_KEY_PREPROD || "";  // process.env.NEXT_PUBLIC_BLOCKFROST_KEY_PREPROD ||
       const networkEnv = process.env.NEXT_PUBLIC_NETWORK_ENV === "Preprod" // "Preprod" ? "Preprod" : 
-      ? NetworkType.PREPROD 
+      ? NetworkType.MAINNET 
       : NetworkType.TESTNET; 
       
       // Initialize Lucid
@@ -83,8 +81,6 @@ const CheckRedeem = () => {
       const walletAddress = await lucid.wallet().address();
       console.log("Connected Wallet Address:", walletAddress);
    
-
-
     // Convert addresses to participants without the extra "581c" prefix
     const isParticipants = async (addresses: string[]) => {
       return await Promise.all(
