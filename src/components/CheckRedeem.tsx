@@ -28,8 +28,8 @@ const getPublicKeyHash = async (address: string): Promise<Uint8Array | null> => 
 
 
 const CheckRedeem = () => {
-  const networkEnv = process.env.NEXT_PUBLIC_NETWORK_ENV === "Mainnet"
-    ? NetworkType.MAINNET 
+  const networkEnv = process.env.NEXT_PUBLIC_NETWORK_ENV === "Preprod"
+    ? NetworkType.PREPROD 
     : NetworkType.TESTNET;
 
   const { isConnected, enabledWallet } = useCardano({
@@ -54,9 +54,9 @@ const CheckRedeem = () => {
     setErrorMessage(null);
 
     try {
-      const blockfrostApiKey =  process.env.NEXT_PUBLIC_BLOCKFROST_KEY_MAINNET || "";  // process.env.NEXT_PUBLIC_BLOCKFROST_KEY_PREPROD ||
-      const networkEnv = process.env.NEXT_PUBLIC_NETWORK_ENV === "Mainnet" // "Preprod" ? "Preprod" : 
-      ? NetworkType.MAINNET 
+      const blockfrostApiKey =  process.env.NEXT_PUBLIC_BLOCKFROST_KEY_PREPROD || "";  // process.env.NEXT_PUBLIC_BLOCKFROST_KEY_PREPROD ||
+      const networkEnv = process.env.NEXT_PUBLIC_NETWORK_ENV === "Preprod" // "Preprod" ? "Preprod" : 
+      ? NetworkType.PREPROD 
       : NetworkType.TESTNET; 
       
       // Initialize Lucid
@@ -65,7 +65,7 @@ const CheckRedeem = () => {
           `https://cardano-${networkEnv.toLowerCase()}.blockfrost.io/api/v0`,
           blockfrostApiKey
         ),
-        "Mainnet"
+        "Preprod"
       );
 
       const validatorScript = "5904e0010100323232323232322533300232323232325332330083001300937540042646464646464a66601c60060022a66602260206ea8024540085854ccc038c01c0044c8c94ccc04cc0580085401058dd6980a00098081baa00916300e37540102a6660186002601a6ea80084c8c8c8c94c8ccc044ccc044c94ccc048ccc0494ccc0540045288a504a09444ccc048cdd799199800800801260105d8799fa0ff00222533301800210011333003003301b00232325333017301030183754006298103d87a8000132533301853330183330183370e004901c2504a229444c8cc004004008894ccc07400452809919299980e19b9100700113371e00e0022660080080046eb8c070c080008c0800045300103d87a8000130083301c374c646600200200444a66603a00226603c66ec0dd480299980d2514c103d87a80004c0103d87980004bd6f7b630099191919299980f19b90009002133022337606ea4024ccc07928a6103d87a80004c0103d87980000051533301e3371e01200426604466ec0dd480499980f2514c0103d87a80004c0103d8798000003133022337606ea4008ccc078005300103d87a80004c0103d8798000330060060033016301e3754603e0066eb8c074008c084008c07c0052f5c06eacc070c064dd50019b8d001375c6034004980103d87a80004a09445281bac30043013375400a941288a50153330113330110024a09445280a999808999808991919299980a1804980a9baa001153330143370e00460066eacc018c058dd5180c980b1baa00114a2294052819299980b8008a6103d87a8000130043301830190014bd701bac301830193019301537540206466600200264660020026eb0c01cc058dd500891299980c0008a5eb804c8c94ccc05ccdd79805180c9baa00200e13301b00233004004001133004004001301c002301a001480008894ccc06000840044ccc00c00cc06c008cdc000098021bab300730173754600e602e6ea8c0680088c94ccc04cc030c050dd50008a400026eb4c060c054dd50009929998099806180a1baa00114c0103d87a80001323300100137566032602c6ea8008894ccc060004530103d87a800013232323253330193372291100002153330193371e910100002130093301d375000297ae014c0103d87a8000133006006003375a60340066eb8c060008c070008c068004c8cc004004008894ccc05c0045300103d87a800013232323253330183372291100002153330183371e910100002130083301c374c00297ae014c0103d87a8000133006006003375660320066eb8c05c008c06c008c0640052825114a02a666022600c60246ea80305288992999809180598099baa00114a02a6660246660246464660020026eb0c064c068c068c068c068c068c068c068c068c058dd500891299980c0008a5013253330163371e6eb8c06c008010528899801801800980d8009bae301730143754002941288a5014a266646002002444a66602e0042980103d87a8000132325333016300b003130063301a375200497ae01333005005001337000069000980d8019bae30190023758600860266ea8014dd6980b18099baa00c374a900019b8948000dd6980098089baa003230143015001230130013011300e37540042c6e1d2000300f3010002300e001300a37540046e1d200216300b300c002300a001300a00230080013004375400229309b2b2b9a5573aaae7955cfaba05742ae89"; 
@@ -74,7 +74,7 @@ const CheckRedeem = () => {
         script: validatorScript,
       };
 
-      const contractAddress = validatorToAddress("Mainnet", validator);
+      const contractAddress = validatorToAddress("Preprod", validator);
       console.log("Contract Address:", contractAddress);
 
       const api = await window.cardano[enabledWallet].enable();
@@ -161,11 +161,11 @@ const handleRedeem = async () => {
   setNotificationMessage(null);
 
   try {
-    const blockfrostApiKey = process.env.NEXT_PUBLIC_BLOCKFROST_KEY_MAINNET;
+    const blockfrostApiKey = process.env.NEXT_PUBLIC_BLOCKFROST_KEY_PREPROD;
     const api = await window.cardano[enabledWallet].enable();
     const lucid = await Lucid(
       new Blockfrost(`https://cardano-${networkEnv.toLowerCase()}.blockfrost.io/api/v0`, blockfrostApiKey),
-      "Mainnet"
+      "Preprod"
     );
     lucid.selectWallet.fromAPI(api);
 
@@ -174,7 +174,7 @@ const handleRedeem = async () => {
       type: "PlutusV3",
       script: validatorScript,
     };
-    const contractAddress = validatorToAddress("Mainnet", validator);
+    const contractAddress = validatorToAddress("Preprod", validator);
     console.log("Contract Address:", contractAddress);
 
     const walletAddress = await lucid.wallet().address();
