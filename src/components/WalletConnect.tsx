@@ -12,7 +12,7 @@ const WalletConnect = () => {
   const networkEnv = process.env.NEXT_PUBLIC_NETWORK_ENV || "Preprod";  // Use Mainnet or Mainnet dynamically
 
   const { isConnected, usedAddresses, disconnect, accountBalance } = useCardano({
-    limitNetwork: networkEnv === "Preprod" ? NetworkType.PREPROD : NetworkType.TESTNET,
+    limitNetwork: networkEnv === "Preprod" ? NetworkType.MAINNET : NetworkType.TESTNET,
   });
 
   const [showModal, setShowModal] = useState(false); // Manage modal visibility
