@@ -17,8 +17,8 @@ type WalletModalProps = {
 
 const WalletModal: React.FC<WalletModalProps> = ({ onClose }) => {
   const network =
-    process.env.NEXT_PUBLIC_NETWORK_ENV === "Mainnet"
-      ? NetworkType.MAINNET
+    process.env.NEXT_PUBLIC_NETWORK_ENV === "Preprod"
+      ? NetworkType.PREPROD
       : NetworkType.TESTNET;
 
   const { isConnected, connect, disconnect, installedExtensions } = useCardano({
