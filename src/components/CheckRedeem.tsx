@@ -316,7 +316,7 @@ return (
         onClick={handleContribute}
         disabled={isLoading}
       >
-        {isLoading ? "Processing..." : "Déposer"}
+        {isLoading ? "Processing..." : "Contribute Fund"}
       </button>
     </div>
     <div className="mb-4">
@@ -325,7 +325,7 @@ return (
         onClick={handleRedeem}
         disabled={isLoading}
       >
-        {isLoading ? "Processing..." : "Retirer"}
+        {isLoading ? "Processing..." : "Collect Fund"}
       </button>
     </div>
     {txHash && (
