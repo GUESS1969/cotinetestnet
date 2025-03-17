@@ -86,8 +86,13 @@ Akyba is not just a platform—it’s a movement toward decentralized, community
 
 
 USER EXPERIENCE - This is the POC of the Akyba project , for testing purpose : 
-The winner 's address is added to : line 237 of CheckRedeem.tsx , all members contributes 2 ADA, then  the winner collect all contributions by 
- 
-
+The winner's address is added to : line 237 of CheckRedeem.tsx 
+Connect to the wallet.
+1) All members contribute 2 ADA , by interacting with the button "Contribute Fund" after inputing 2 in the field
+2) The designated winner interacts with the button "Collect Fund" then, all contributions are added into his account 
 
 ![User Experience](https://github.com/user-attachments/assets/4f1630f9-b033-49a1-957e-3ba416522e58)
+
+The final project workflow would be 
+
+![Final Project](https://github.com/user-attachments/assets/89e91961-1082-4b75-9798-0e9203693efb)
