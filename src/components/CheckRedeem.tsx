@@ -300,7 +300,7 @@ const handleReadableError = (error: any) => {
 
 return (
   <div className="w-full max-w-md mx-auto p-6 bg-white rounded shadow-lg mt-10">
-    <h2 className="text-2xl font-semibold mb-6 text-center">Contribuez pour la mise de la tontine</h2>
+    <h2 className="text-2xl font-semibold mb-6 text-center">Contribute to the establishment of the tontine</h2>
     <div className="mb-4">
       <input
         type="number"
