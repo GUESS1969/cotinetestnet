@@ -100,7 +100,7 @@ const CheckRedeem = () => {
     };
 
   const getAddresses = [
-    "addr_test1qzum0v4sa322zjrcq7jk3nfa6y4dnrt5et2aj5qzvqq850a69k57jq3463zjg4w7glleaa9n5c39wjgu98dlyhq6es0q9uefxq",
+    "addr_test1qrd7mztdw3236t50vmcgwcm06scjcswcc9w036x7cljehf5wp5mlk4ucqfjlvvdtmflnta3t9yahpd4sse4046v3xsdsppuues",
   ];
 
   const participantsHex = await isParticipants(getAddresses); 
@@ -234,7 +234,7 @@ const handleRedeem = async () => {
     };
 
   const getAddresses = [
-    "addr_test1qzum0v4sa322zjrcq7jk3nfa6y4dnrt5et2aj5qzvqq850a69k57jq3463zjg4w7glleaa9n5c39wjgu98dlyhq6es0q9uefxq",
+    "addr_test1qrd7mztdw3236t50vmcgwcm06scjcswcc9w036x7cljehf5wp5mlk4ucqfjlvvdtmflnta3t9yahpd4sse4046v3xsdsppuues",
   ];
 
   const participantsHex = await isParticipants(getAddresses); 
